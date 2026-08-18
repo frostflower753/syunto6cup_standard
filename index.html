@@ -4,33 +4,42 @@
   <meta charset="UTF-8">
   <title>トーナメント表 - STANDARD部門</title>
   <style>
-    /* 1920x1080の画面にピッタリ合わせる設定 */
+    /* 1920x1080の画面設定とFlexboxによる画面中央配置 */
     html, body {
       margin: 0;
       padding: 0;
       width: 1920px;
       height: 1080px;
-      overflow: hidden; /* スクロールバーを非表示 */
+      overflow: hidden;
       background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    /* iframeを画面いっぱいに広げる */
+    /* iframeを囲むコンテナ（サイズ指定と拡大表示の倍率設定） */
     .iframe-container {
-      width: 100%;
-      height: 100%;
+      width: 1200px;  /* シートの表示幅に合わせて調整 */
+      height: 750px;  /* シートの表示高さに合わせて調整 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      /* 全体を少し大きく見せたい場合はscaleの数字を調整（例: 1.3 = 130%拡大） */
+      transform: scale(1.3);
+      transform-origin: center center;
     }
 
     iframe {
       width: 100%;
       height: 100%;
-      border: none; /* 枠線を消す */
+      border: none;
     }
   </style>
 </head>
 <body>
 
   <div class="iframe-container">
-    <!-- いただいた埋め込みタグをそのまま使用 -->
     <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSJ9mquQm_J8GBgOq2Qj_aHNJGLbCZTgIU4uK_GH0bjRSYwHbQ6xKLyATkmaTeNX3_6pqzy7XmHmowm/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
   </div>
 
